@@ -8,6 +8,7 @@ import PeriodTracker from "./pages/PeriodTracker";
 import MentalHealth from "./pages/MentalHealth";
 import Nutrition from "./pages/Nutrition";
 import Exercise from "./pages/Exercise";
+import SOSPage from "./pages/SOSPage";
 import PCOSChecker from "./pages/PCOSChecker";
 import AnemiaScanner from "./pages/AnemiaScanner";
 import DoctorFinder from "./pages/DoctorFinder";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/mental-health" element={<MentalHealth />} />
           <Route path="/nutrition" element={<Nutrition />} />
           <Route path="/exercise" element={<Exercise />} />
+          <Route path="/sos" element={<SOSPage />} />
           <Route path="/pcos" element={<PCOSChecker />} />
           <Route path="/anemia" element={<AnemiaScanner />} />
           <Route path="/doctor-finder" element={<DoctorFinder />} />
