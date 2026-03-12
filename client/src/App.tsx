@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import PeriodTracker from "./pages/PeriodTracker";
 import NotFound from "./pages/NotFound";
 import MentalHealth from "./pages/MentalHealth";
+import Nutrition from "./pages/Nutrition";
+import Exercise from "./pages/Exercise";
+import DoctorFinder from "./pages/DoctorFinder";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +23,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/period" element={<PeriodTracker />} />
           <Route path="/mental-health" element={<MentalHealth />} />
+          <Route path="/nutrition" element={<Nutrition />} />
+          <Route path="/exercise" element={<Exercise />} />
+          <Route path="/doctor-finder" element={<DoctorFinder />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
