@@ -4,9 +4,10 @@ const cors = require("cors");
 require("dotenv").config();
 
 // import routes
+const cycleRoutes = require("./routes/cycleRoutes");
 const journalRoutes = require("./routes/journalRoutes");
 const chatRoutes = require("./routes/chatRoutes");
-const healthRoutes = require("./routes/healthRoutes");
+const healthRoutes = require("./routes/healthRoutes"); // health wallet
 
 const app = express();
 
@@ -28,9 +29,10 @@ mongoose
   });
 
 // API routes
+app.use("/api/cycles", cycleRoutes);   // period tracker
 app.use("/api/journal", journalRoutes); // mood journal
-app.use("/api/chat", chatRoutes); // AI chatbot
-app.use("/api/health", healthRoutes); // health wallet
+app.use("/api/chat", chatRoutes);      // AI chatbot
+app.use("/api/health", healthRoutes);  // health wallet
 
 // test route
 app.get("/", (req, res) => {
