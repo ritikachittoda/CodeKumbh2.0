@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import TestMap from "../components/TestMap";
 import { Doctor } from "../types/Doctor";
 
-// interface Doctor {
+// export interface Doctor {
 //   _id: string
 //   name: string
 //   specialty: string
@@ -27,7 +27,7 @@ const DoctorFinder = () => {
   
   const [search, setSearch] = useState("");
 
-const [doctors, setDoctors] = useState<Doctor[]>([
+const [doctors, setDoctors] = useState<Doctor>([
   {
     _id: "1",
     name: "Dr. Sonal Richhariya",
@@ -137,7 +137,7 @@ const [doctors, setDoctors] = useState<Doctor[]>([
                       {doc.name}
                     </h4>
 
-                    <p className="text-sm text-muted-foreground">
+                     <p className="text-sm text-muted-foreground">
                       {doc.specialty} · {doc.hospital} · {doc.experience} yrs
                     </p>
 

@@ -7,6 +7,15 @@ import { FileText, Lock, Plus, Download } from "lucide-react";
 
 const API = "http://localhost:5000/api/health";
 
+interface HealthRecord {
+  _id: string
+  title: string
+  category: string
+  status: string
+  fileUrl: string
+  createdAt: string
+}
+
 /* Demo records */
 const sampleRecords = [
   { title: "Blood Test (CBC)", status: "Normal", date: "Feb 15, 2026", color: "bg-sage-light" },
@@ -25,12 +34,12 @@ const categories = [
 
 const HealthWallet = () => {
 
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState<HealthRecord[]>([]);
   const [showUpload, setShowUpload] = useState(false);
 
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("Lab Reports");
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
 
   const fetchRecords = async () => {
     try {
@@ -185,7 +194,7 @@ const HealthWallet = () => {
 
               <input
                 type="file"
-                onChange={(e)=>setFile(e.target.files[0])}
+                onChange={(e)=>setFile(e.target.files?.[0] || null)}
               />
 
               <button

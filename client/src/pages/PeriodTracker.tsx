@@ -5,6 +5,18 @@ import { TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+interface Cycle {
+  _id: string
+  startDate: string
+  length: number
+  status: string
+}
+
+interface Prediction {
+  avgCycle: number
+  nextPeriod: string
+}
+
 const phases = [
   { name: "Menstrual", days: "Day 1-5", emoji: "🌸", desc: "Rest, hydrate, iron-rich foods. Your body is shedding the uterine lining.", color: "bg-terracotta-light" },
   { name: "Follicular", days: "Day 6-13", emoji: "🌱", desc: "Energy rising! Great time for intense workouts and starting new projects.", color: "bg-gold-light" },
@@ -14,8 +26,8 @@ const phases = [
 
 const PeriodTracker = () => {
 
-  const [cycleHistory, setCycleHistory] = useState([]);
-  const [prediction, setPrediction] = useState(null);
+  const [cycleHistory, setCycleHistory] = useState<Cycle[]>([]);
+  const [prediction, setPrediction] = useState<Prediction | null>(null);
 
   const [startDate, setStartDate] = useState("");
   const [length, setLength] = useState(28);
@@ -162,7 +174,7 @@ const PeriodTracker = () => {
               <input
                 type="number"
                 value={length}
-                onChange={(e) => setLength(e.target.value)}
+                onChange={(e) => setLength(Number(e.target.value))}
                 placeholder="Cycle Length"
                 className="border rounded-lg p-2"
               />
@@ -213,11 +225,10 @@ const PeriodTracker = () => {
                   </div>
 
                   <span
-                    className={`text-xs font-bold px-3 py-1 rounded-lg ${
-                      cycle.status === "Normal"
+                    className={`text-xs font-bold px-3 py-1 rounded-lg ${cycle.status === "Normal"
                         ? "bg-sage-light text-sage"
                         : "bg-terracotta-light text-terracotta"
-                    }`}
+                      }`}
                   >
                     {cycle.status}
                   </span>
