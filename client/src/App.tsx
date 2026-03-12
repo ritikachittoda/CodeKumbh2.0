@@ -5,11 +5,14 @@ import { Toaster } from "./components/ui/toaster";
 import { TooltipProvider } from "./components/ui/tooltip";
 import Index from "./pages/Index";
 import PeriodTracker from "./pages/PeriodTracker";
-import NotFound from "./pages/NotFound";
 import MentalHealth from "./pages/MentalHealth";
 import Nutrition from "./pages/Nutrition";
 import Exercise from "./pages/Exercise";
+import PCOSChecker from "./pages/PCOSChecker";
+import AnemiaScanner from "./pages/AnemiaScanner";
 import DoctorFinder from "./pages/DoctorFinder";
+import HealthWallet from "./pages/HealthWallet";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +28,10 @@ const App = () => (
           <Route path="/mental-health" element={<MentalHealth />} />
           <Route path="/nutrition" element={<Nutrition />} />
           <Route path="/exercise" element={<Exercise />} />
+          <Route path="/pcos" element={<PCOSChecker />} />
+          <Route path="/anemia" element={<AnemiaScanner />} />
           <Route path="/doctor-finder" element={<DoctorFinder />} />
+          <Route path="/health-wallet" element={<HealthWallet />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
