@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
 @layer base {
   :root {
-    --background: 45 30% 97%;
+--background: 330 60% 97%;
     --foreground: 20 15% 15%;
 
     --card: 40 25% 99%;
@@ -15,28 +15,32 @@
     --popover: 40 25% 99%;
     --popover-foreground: 20 15% 15%;
 
-    --primary: 150 25% 38%;
-    --primary-foreground: 45 30% 97%;
+    --primary:  330 70% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 50% 92%;
-    --secondary-foreground: 20 30% 25%;
+--secondary: 330 60% 94%;
+--secondary-foreground: 330 30% 25%;
 
     --muted: 40 15% 94%;
     --muted-foreground: 20 8% 50%;
 
-    --accent: 18 60% 55%;
-    --accent-foreground: 45 30% 97%;
+   --accent: 340 75% 65%;
+--accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 35 15% 89%;
     --input: 35 15% 89%;
-    --ring: 150 25% 38%;
+   --ring: 330 70% 55%;
 
     --radius: 0.75rem;
 
     /* Custom palette */
+    --rose: 340 75% 60%;
+--rose-light: 340 75% 95%;
+--blush: 350 70% 70%;
+--blush-light: 350 70% 96%;
     --sage: 150 20% 45%;
     --sage-light: 150 25% 93%;
     --terracotta: 18 55% 52%;
@@ -52,14 +56,15 @@
     --gold: 42 70% 50%;
     --gold-light: 42 70% 93%;
 
-    --gradient-sage: linear-gradient(135deg, hsl(150, 25%, 38%), hsl(160, 30%, 50%));
-    --gradient-terra: linear-gradient(135deg, hsl(18, 55%, 52%), hsl(30, 65%, 60%));
+   --gradient-sage: linear-gradient(135deg, hsl(330, 70%, 55%), hsl(340, 75%, 65%));
+--gradient-terra: linear-gradient(135deg, hsl(340, 70%, 60%), hsl(350, 75%, 70%));
+--gradient-hero: linear-gradient(135deg, hsl(330, 70%, 55%) 0%, hsl(340, 75%, 65%) 50%, hsl(350, 80%, 70%) 100%);
     --gradient-ocean: linear-gradient(135deg, hsl(195, 45%, 45%), hsl(180, 40%, 50%));
     --gradient-plum: linear-gradient(135deg, hsl(320, 25%, 42%), hsl(280, 30%, 50%));
     --gradient-warm: linear-gradient(135deg, hsl(38, 35%, 88%), hsl(25, 50%, 92%));
-    --gradient-hero: linear-gradient(135deg, hsl(150, 20%, 45%) 0%, hsl(18, 55%, 52%) 50%, hsl(42, 70%, 50%) 100%);
+    
 
-    --shadow-soft: 0 4px 24px -6px hsl(20 15% 15% / 0.08);
+   --shadow-soft: 0 4px 24px -6px hsl(330 70% 55% / 0.15);
     --shadow-card: 0 1px 8px -2px hsl(20 15% 15% / 0.06);
     --shadow-elevated: 0 8px 40px -8px hsl(20 15% 15% / 0.12);
 
